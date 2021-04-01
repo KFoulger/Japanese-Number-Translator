@@ -2,7 +2,7 @@
 
 //Translates the number given to it
 function FindNumber(number){
-    let tNumber = "";
+    let hNumber = "", kNumber = "";
     let length = number.toString();
     let numbers = [];
 
@@ -18,7 +18,10 @@ function FindNumber(number){
     for(const i of numbers){
         for(const j of _characters){         
             if(j.romanNumeral === i){
-                if(i !== 1) tNumber += j.hiragana;
+                if(i !== 1){
+                    hNumber += j.hiragana;
+                    kNumber += j.kanji;
+                }
                 //Needed to make sure the current digit is changed without adding new hira/kanji
                 if(i === 0){
                     --length;
@@ -27,31 +30,35 @@ function FindNumber(number){
                 //Adds the neccessary 10th power on to the end. eg/ 100, 1000, 10000
                 switch(length){
                     case 5:
-                        tNumber += "まん";
+                        hNumber += "まん";
+                        kNumber += "万";
                         break;
                     
                     case 4:
                         if(i === 8){
-                            tNumber = tNumber.slice(0,-1);　//Removes the last character of a string
-                            tNumber += "っ";
+                            hNumber = hNumber.slice(0,-1);　//Removes the last character of a string
+                            hNumber += "っ";
                         }
-                        tNumber += (i === 3) ? "ぜん" : "せん";
+                        hNumber += (i === 3) ? "ぜん" : "せん";
+                        kNumber += "千";
                         break;
                     
                     case 3:
                         if(i === 8 || i === 6){
-                            tNumber = tNumber.slice(0,-1);
-                            tNumber += "っ";
+                            hNumber = hNumber.slice(0,-1);
+                            hNumber += "っ";
                         }
-                        tNumber += (i === 3) ? "びゃく" : (i === 6 || i === 8) ? "ぴゃく" : "ひゃく";
+                        hNumber += (i === 3) ? "びゃく" : (i === 6 || i === 8) ? "ぴゃく" : "ひゃく";
+                        kNumber += "百";
                         break;
 
                     case 2:
-                        tNumber += "じゅう";
+                        hNumber += "じゅう";
+                        kNumber += "十";
                         break;
 
                     case 1:
-                        if(i === 1) tNumber += j.hiragana; //Makes sure the number one is only added if its the last digit
+                        if(i === 1) hNumber += j.hiragana; //Makes sure the number one is only added if its the last digit
                         break;
                 }
                 --length;
@@ -59,7 +66,7 @@ function FindNumber(number){
             }
         }
     }
-    return tNumber;
+    return [hNumber, kNumber];
 }
 
 //Generates a random number in a specified range and translates it into hira
@@ -67,6 +74,7 @@ function FindNumber(number){
 function getRandom(min, max){
     let rNumber = Math.floor(Math.random() * (max - min + 1)) + min;
     let numberSet = [rNumber];
-    numberSet.push(FindNumber(rNumber));
+    let translated = FindNumber(rNumber);
+    numberSet = numberSet.concat(translated);
     return numberSet;
 }

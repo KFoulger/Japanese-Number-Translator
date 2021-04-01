@@ -2,8 +2,9 @@
 
 document.getElementById('translate').addEventListener('click', function(){
     let base = parseInt(document.getElementById("number").value);
-    let hira = FindNumber(base);
-    document.getElementById('hira').innerText = hira;
+    let translated = FindNumber(base);
+    document.getElementById('hira').innerText = translated[0];
+    document.getElementById('kanji').innerText = translated[1];
 })
 
 document.getElementById('random').addEventListener('click', function(){
