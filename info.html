@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Learning the characters</title>
+    <style type=text/css>
+        body   
+        {  
+            height: 125vh;  
+            margin-top: 80px;  
+            padding: 30px;  
+            background-size: cover;  
+            font-family: sans-serif;  
+        }  
+        header 
+        {  
+            background-color: darkslategray;  
+            position: fixed;  
+            left: 0;  
+            right: 0;  
+            top: 5px;  
+            height: 30px;  
+            display: flex;  
+            align-items: center;  
+            box-shadow: 0 0 25px 0 black;  
+        }  
+        header * 
+        {  
+            display: inline;  
+        }  
+        header li 
+        {  
+            margin: 20px;  
+        }  
+        header li a 
+        {  
+            color: whitesmoke;  
+            text-decoration: none;  
+        }  
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="home.html">Home</a>
+                </li>
+                <li>
+                    <a href="info.html">Learning</a>
+                </li>
+                <li>
+                    <a href="translate.html">Number Translator</a>
+                </li>
+                <li>
+                    <a href="numberTest.html">Test</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <h1>Learning the characters</h1>
+        <hr />
+        <h3>Translations:</h3>
+        <table border="2">
+            <tr><th></th> <th>1</th> <th>2</th> <th>3</th> <th>4</th> <th>5</th> <th>6</th> <th>7</th> <th>8</th> <th>9</th> <th>10</th> <th>100</th> <th>1000</th> <th>10000</th></tr>
+            <tr><td>Hiragana</td> <td>いち</td> <td>に</td> <td>さん</td> <td>よん</td> <td>ご</td> <td>ろく</td> <td>なな</td> <td>はち</td> <td>きゅう</td> <td>じゅう</td> <td>ひゃく</td> <td>せん</td> <td>まん</td></tr>
+            <tr><td>Kanji</td> <td>一</td> <td>二</td> <td>三</td> <td>四</td> <td>五</td> <td>六</td> <td>七</td> <td>八</td> <td>九</td> <td>十</td> <td>百</td> <td>千</td> <td>万</td></tr>
+        </table><br><br>
+        
+        From these translations, all numbers from 1 to 99,999 can be written/spoken. All you have to do is slap a few of these together.
+        <p>Here are some examples:</p>
+        <ul>
+            <li>38 = さんじゅうはち</li>
+            <li>492 = よんひゃくきゅうじゅうに</li>
+            <li>5751 = ごせんななひゃくごじゅういち</li>
+            <li>10276 = まんにひゃくななじゅうろく</li>
+        </ul>
+        To make it as clear as possible, I'll break down the translation of 492
+        <ul>
+            <li>400 is written literally as '4 100'</li>
+            <li>90 is written as '9 10'</li>
+            <li>2 is just 2</li>
+        </ul>
+        <p>Putting all these together gives 492. So '4 100, 9 10, 2' is the literal translation</p>
+        <h3>Special cases:</h3>
+        <p>There are a few numbers that are pronounced differently. The kanji is the same, but the hiragana will be different. These numbers are:</p>
+        <table border="1">
+            <tr><th></th> <th>300</th> <th>600</th> <th>800</th> <th>3000</th> <th>8000</th></tr>
+            <tr><td>Hiragana</td> <td>さんびゃく</td> <td>ろっぴゃく</td> <td>はっぴゃく</td> <td>さんぜん</td> <td>はっせん</td></tr>
+        </table>
+    </div>
+</body>

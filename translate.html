@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 
 <html>
+
     <head>
         <meta charset="UTF-8">
-        <title>Random Hiragana test</title>
+        <title>Japanese number test</title>
         <style type=text/css>
             body   
             {  
@@ -61,27 +62,19 @@
             </nav>
         </header>
         <div>
-            <label for="minRange">Minimum number</label>
-            <input type="text" id="minRange" name="minRange" value="1">
-            <label for="maxRange">Maximum number</label>
-            <input type="text" id="maxRange" name="maxRange" value="99999"><br><br>
-            <button id="genRandom" class="btn btn-default">Generate hiragana</button>
-            <button id="genKanji" class="btn btn-default">Generate Kanji</button><br><br>
-            <label for="hira">Hiragana</label>
+            <label for="number">Enter a number:</label>
+            <input type="text" id="number" name="number"><br><br>
+            <button id ="translate" class="btn btn-default">Translate</button><br><br>
+            <label for="hira">Hiragana:</label>
             <h3 id="hira"></h3><br><br>
-            <label for="translation">Enter the numerical translation</label>
-            <input type="text" id="translation" name="translation"><br><br>
-            <button id="check" class="btn btn-default">Check answer</button>
-            <label for="kanji">Kanji</label>
-            <h3 id="kanji"></h3><br><br>
-            <label for="kTranslation">Enter the numerical translation</label>
-            <input type="text" id="kTranslation" name="kTranslation"><br><br>
-            <button id="kCheck" class="btn btn-default">Check answer</button>
+            <label for="kanji">Kanji:</label>
+            <h3 id="kanji"></h3>
         </div>
     </body>
 
     <script src="./Javascript/characters.js"></script>
     <script src="./Javascript/utils.js"></script>
-    <script src="./Javascript/tester.js"></script>
+    <script src="./Javascript/translator.js"></script>
+    
 
 </html>
